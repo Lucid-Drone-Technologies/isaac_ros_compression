@@ -27,8 +27,8 @@ def generate_launch_description():
         package='isaac_ros_h264_decoder',
         plugin='nvidia::isaac_ros::h264_decoder::DecoderNode',
         remappings=[
-                    ('image_compressed', 'front_stereo_camera/left/image_compressed'),
-                    ('image_uncompressed', 'front_stereo_camera/left/image_uncompressed')
+                    ('image_compressed', 'front_stereo_camera/right/image_raw_compressed'),
+                    ('image_uncompressed', 'front_stereo_camera/right/image_raw')
         ])
     
     decoder_front_right = ComposableNode(
@@ -36,8 +36,8 @@ def generate_launch_description():
         package='isaac_ros_h264_decoder',
         plugin='nvidia::isaac_ros::h264_decoder::DecoderNode',
         remappings=[
-                    ('image_compressed', 'front_stereo_camera/right/image_compressed'),
-                    ('image_uncompressed', 'front_stereo_camera/right/image_uncompressed')
+                    ('image_compressed', 'left_stereo_camera/right/image_raw_compressed'),
+                    ('image_uncompressed', 'left_stereo_camera/right/image_raw')
         ])
     
     decoder_left_left = ComposableNode(
@@ -45,8 +45,8 @@ def generate_launch_description():
         package='isaac_ros_h264_decoder',
         plugin='nvidia::isaac_ros::h264_decoder::DecoderNode',
         remappings=[
-                    ('image_compressed', 'left_stereo_camera/left/image_compressed'),
-                    ('image_uncompressed', 'left_stereo_camera/left/image_uncompressed')
+                    ('image_compressed', 'lleft_stereo_camera/left/image_raw_compressed'),
+                    ('image_uncompressed', 'left_stereo_camera/left/image_raw')
         ])
     
     decoder_left_right = ComposableNode(
@@ -64,8 +64,8 @@ def generate_launch_description():
         package='isaac_ros_h264_decoder',
         plugin='nvidia::isaac_ros::h264_decoder::DecoderNode',
         remappings=[
-                    ('image_compressed', 'right_stereo_camera/left/image_compressed'),
-                    ('image_uncompressed', 'right_stereo_camera/left/image_uncompressed')
+                    ('image_compressed', 'right_stereo_camera/left/image_raw_compressed'),
+                    ('image_uncompressed', 'right_stereo_camera/left/image_raw')
         ])
     
     decoder_right_right = ComposableNode(
@@ -73,8 +73,8 @@ def generate_launch_description():
         package='isaac_ros_h264_decoder',
         plugin='nvidia::isaac_ros::h264_decoder::DecoderNode',
         remappings=[
-                    ('image_compressed', 'right_stereo_camera/right/image_compressed'),
-                    ('image_uncompressed', 'right_stereo_camera/right/image_uncompressed')
+                    ('image_compressed', 'right_stereo_camera/right/image_raw_compressed'),
+                    ('image_uncompressed', 'right_stereo_camera/right/image_raw')
         ])
 
     container = ComposableNodeContainer(

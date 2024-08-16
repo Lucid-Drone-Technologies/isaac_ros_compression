@@ -27,11 +27,11 @@ def generate_launch_description():
     launch_args = [
         DeclareLaunchArgument(
             'input_height',
-            default_value='720',
+            default_value='1200',
             description='Height of the original image'),
         DeclareLaunchArgument(
             'input_width',
-            default_value='1080',
+            default_value='1920',
             description='Width of the original image'),
         DeclareLaunchArgument(
             'config',
