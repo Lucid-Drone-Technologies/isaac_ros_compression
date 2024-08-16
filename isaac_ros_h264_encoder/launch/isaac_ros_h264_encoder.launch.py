@@ -55,7 +55,7 @@ def generate_launch_description():
         }],
         remappings=[
                     ('image_raw', 'front_stereo_camera/left/image_raw'),
-                    ('image_compressed', 'front_stereo_camera/left/image_compressed')]
+                    ('image_compressed', 'front_stereo_camera/right/image_raw_compressed')]
         )
     
     encoder_front_right = ComposableNode(
@@ -69,7 +69,7 @@ def generate_launch_description():
         }],
         remappings=[
                     ('image_raw', 'front_stereo_camera/right/image_raw'),
-                    ('image_compressed', 'front_stereo_camera/right/image_compressed')]
+                    ('image_compressed', 'front_stereo_camera/right/image_raw_compressed')]
         )
     
     encoder_left_left = ComposableNode(
@@ -83,7 +83,7 @@ def generate_launch_description():
         }],
         remappings=[
                     ('image_raw', 'left_stereo_camera/left/image_raw'),
-                    ('image_compressed', 'left_stereo_camera/left/image_compressed')]
+                    ('image_compressed', 'left_stereo_camera/left/image_raw_compressed')]
         )
     
     encoder_left_right = ComposableNode(
@@ -97,7 +97,7 @@ def generate_launch_description():
         }],
         remappings=[
                     ('image_raw', 'left_stereo_camera/right/image_raw'),
-                    ('image_compressed', 'left_stereo_camera/right/image_compressed')]
+                    ('image_compressed', 'left_stereo_camera/right/image_raw_compressed')]
         )
     
     encoder_right_left = ComposableNode(
@@ -111,7 +111,7 @@ def generate_launch_description():
         }],
         remappings=[
                     ('image_raw', 'right_stereo_camera/left/image_raw'),
-                    ('image_compressed', 'right_stereo_camera/left/image_compressed')]
+                    ('image_compressed', 'right_stereo_camera/left/image_raw_compressed')]
         )
     
     encoder_right_right = ComposableNode(
@@ -125,7 +125,7 @@ def generate_launch_description():
         }],
         remappings=[
                     ('image_raw', 'right_stereo_camera/right/image_raw'),
-                    ('image_compressed', 'right_stereo_camera/right/image_compressed')]
+                    ('image_compressed', 'right_stereo_camera/right/image_raw_compressed')]
         )
 
     container = ComposableNodeContainer(
