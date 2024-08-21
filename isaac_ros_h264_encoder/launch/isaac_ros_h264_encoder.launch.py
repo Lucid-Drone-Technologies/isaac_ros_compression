@@ -35,14 +35,20 @@ def generate_launch_description():
             description='Width of the original image'),
         DeclareLaunchArgument(
             'config',
-            default_value='pframe_cqp',
-            description='Config of encoder')
+            default_value='iframe_cqp',
+            description='Config of encoder'),
+        DeclareLaunchArgument(
+            'type_negotiation_duration_s',
+            default_value='5',
+            description='Duration in seconds to wait for type negotiation'
+        )
     ]
 
     # Encoder parameters
     input_height = LaunchConfiguration('input_height')
     input_width = LaunchConfiguration('input_width')
     config = LaunchConfiguration('config')
+    type_negotiation_duration_s = LaunchConfiguration('type_negotiation_duration_s')
 
     encoder_front_left = ComposableNode(
         name='encoder_front_left',
@@ -52,10 +58,11 @@ def generate_launch_description():
                 'input_height': input_height,
                 'input_width': input_width,
                 'config': config,
+                'type_negotiation_duration_s': type_negotiation_duration_s
         }],
         remappings=[
                     ('image_raw', 'front_stereo_camera/left/image_raw'),
-                    ('image_compressed', 'front_stereo_camera/right/image_raw_compressed')]
+                    ('image_compressed', 'front_stereo_camera/left/image_raw_compressed')]
         )
     
     encoder_front_right = ComposableNode(
@@ -66,6 +73,7 @@ def generate_launch_description():
                 'input_height': input_height,
                 'input_width': input_width,
                 'config': config,
+                'type_negotiation_duration_s': type_negotiation_duration_s
         }],
         remappings=[
                     ('image_raw', 'front_stereo_camera/right/image_raw'),
@@ -80,6 +88,7 @@ def generate_launch_description():
                 'input_height': input_height,
                 'input_width': input_width,
                 'config': config,
+                'type_negotiation_duration_s': type_negotiation_duration_s
         }],
         remappings=[
                     ('image_raw', 'left_stereo_camera/left/image_raw'),
@@ -94,6 +103,7 @@ def generate_launch_description():
                 'input_height': input_height,
                 'input_width': input_width,
                 'config': config,
+                'type_negotiation_duration_s': type_negotiation_duration_s
         }],
         remappings=[
                     ('image_raw', 'left_stereo_camera/right/image_raw'),
@@ -108,6 +118,7 @@ def generate_launch_description():
                 'input_height': input_height,
                 'input_width': input_width,
                 'config': config,
+                'type_negotiation_duration_s': type_negotiation_duration_s
         }],
         remappings=[
                     ('image_raw', 'right_stereo_camera/left/image_raw'),
@@ -122,6 +133,7 @@ def generate_launch_description():
                 'input_height': input_height,
                 'input_width': input_width,
                 'config': config,
+                'type_negotiation_duration_s': type_negotiation_duration_s
         }],
         remappings=[
                     ('image_raw', 'right_stereo_camera/right/image_raw'),
