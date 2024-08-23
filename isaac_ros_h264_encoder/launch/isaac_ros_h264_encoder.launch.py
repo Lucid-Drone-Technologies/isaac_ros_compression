@@ -51,9 +51,10 @@ def generate_launch_description():
     type_negotiation_duration_s = LaunchConfiguration('type_negotiation_duration_s')
 
     encoder_front_left = ComposableNode(
-        name='encoder_front_left',
+        name='left_encoder',
         package='isaac_ros_h264_encoder',
         plugin='nvidia::isaac_ros::h264_encoder::EncoderNode',
+        namespace='front_stereo_camera',
         parameters=[{
                 'input_height': input_height,
                 'input_width': input_width,
@@ -66,9 +67,10 @@ def generate_launch_description():
         )
     
     encoder_front_right = ComposableNode(
-        name='encoder_front_right',
+        name='right_encoder',
         package='isaac_ros_h264_encoder',
         plugin='nvidia::isaac_ros::h264_encoder::EncoderNode',
+        namespace='front_stereo_camera',
         parameters=[{
                 'input_height': input_height,
                 'input_width': input_width,
@@ -81,9 +83,10 @@ def generate_launch_description():
         )
     
     encoder_left_left = ComposableNode(
-        name='encoder_left_left',
+        name='left_encoder',
         package='isaac_ros_h264_encoder',
         plugin='nvidia::isaac_ros::h264_encoder::EncoderNode',
+        namespace='left_stereo_camera',
         parameters=[{
                 'input_height': input_height,
                 'input_width': input_width,
@@ -96,9 +99,10 @@ def generate_launch_description():
         )
     
     encoder_left_right = ComposableNode(
-        name='encoder_left_right',
+        name='right_encoder',
         package='isaac_ros_h264_encoder',
         plugin='nvidia::isaac_ros::h264_encoder::EncoderNode',
+        namespace='left_stereo_camera',
         parameters=[{
                 'input_height': input_height,
                 'input_width': input_width,
@@ -111,9 +115,10 @@ def generate_launch_description():
         )
     
     encoder_right_left = ComposableNode(
-        name='encoder_right_left',
+        name='left_encoder',
         package='isaac_ros_h264_encoder',
         plugin='nvidia::isaac_ros::h264_encoder::EncoderNode',
+        namespace='right_stereo_camera',
         parameters=[{
                 'input_height': input_height,
                 'input_width': input_width,
@@ -126,9 +131,10 @@ def generate_launch_description():
         )
     
     encoder_right_right = ComposableNode(
-        name='encoder_right_right',
+        name='right_encoder',
         package='isaac_ros_h264_encoder',
         plugin='nvidia::isaac_ros::h264_encoder::EncoderNode',
+        namespace='right_stereo_camera',
         parameters=[{
                 'input_height': input_height,
                 'input_width': input_width,
